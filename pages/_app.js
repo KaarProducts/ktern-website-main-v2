@@ -15,10 +15,13 @@ const tagManagerArgs = {
 import { StoreProvider } from '../component/modal';
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()
-  clarity.init('kuw9ejkqcg');
+  // clarity.init('kuw9ejkqcg');
 // if(process.browser)
 // console.log(document)
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      clarity.init('kuw9ejkqcg');
+    }
     
     TagManager.initialize(tagManagerArgs)
     const handleRouteChange = url => {
