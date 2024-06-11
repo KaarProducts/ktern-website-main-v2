@@ -21,7 +21,7 @@ export default function Hero({
   return (
     <section className={'relative  overflow-hidden'}>
       {index === true ? (<div className='py-4'></div>):('')}
-      <div className={` flex flex-wrap pb-4  ${background}-${stream}`}>
+      <div className={` flex flex-wrap pt-4 pb-4  ${background}-${stream}`}>
         <div className="w-full lg:w-1/2 pt-12 pb-6 flex justify-center">
           <div className="px-12 pl-24 sm:p-8 sm:py-0">
             <div className="ml-auto mb-8 lg:mb-8 m-4">
@@ -323,13 +323,14 @@ export default function Hero({
             }}
           >
             <div className="relative h-full items-center justify-center">
-              <div className={'relative mx-auto md:mr-0 max-w-max mb-8  pr-8 '}>
+              <div style={{ maxHeight: '400px' }} className={'relative mx-auto md:mr-0 max-w-max mb-8  pr-8 '}>
                 <img
                   src={data.BannerImage.imageURL}
                   alt={data.BannerImage.imageDescription}
                   width={data.BannerImage.width}
                   height={data.BannerImage.height}
-                  className="relative z-10 p-0 mt-10 transform rounded-xl lg:scale-110"
+                  style={{ maxHeight: '380px' }}
+                  className="relative z-10 p-0 mt-6 transform rounded-xl lg:scale-110"
                 />
               </div>
             </div>
@@ -337,13 +338,14 @@ export default function Hero({
         ) : (
           <div className="w-full lg:w-1/2 pr-12 pt-24 sm:hidden">
             <div className="relative h-full items-center justify-center">
-              <div className={'relative mx-auto md:mr-0 max-w-max mb-8  p-8 '}>
+              <div style={{ maxHeight: '400px' }} className={'relative mx-auto md:mr-0 max-w-max mb-8  p-8 '}>
                 <img
                   src={data.BannerImage.imageURL}
                   alt={data.BannerImage.imageDescription}
                   width={data.BannerImage.width}
                   height={data.BannerImage.height}
-                  className="relative z-10 p-0 mt-10 transform rounded-xl lg:scale-110"
+                  style={{ maxHeight: '380px' }}
+                  className="relative z-10 p-0 mt-6 transform rounded-xl lg:scale-110"
                 />
                 {feature ? (
                   <div className="absolute top-0 right-0 w-full h-full mt-4 -mr-5 transform scale-125 rotate-135">

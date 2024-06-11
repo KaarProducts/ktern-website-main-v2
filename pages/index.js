@@ -951,6 +951,26 @@ function Home({ data, h_data, f_data }) {
                   </a>
                 </Link>
               </div>
+              <div className="flex w-full">
+                <div className="w-full">
+                  <div className="relative mt-8 md:pr-8 h-auto items-center justify-center">
+                    {data?.achievements?.map((card, index) => (
+                      <div
+                        key={index}
+                        className="relative shadow mx-auto max-w-max mb-8 border-2 hover:border-black"
+                      >
+                          <Image
+                            priority
+                            src={card.imageURL}
+                            alt={card.imageDescription}
+                            height={card.height}
+                            width={card.width}
+                          />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           {/* <!-- /Redirect content Section --> */}{" "}
