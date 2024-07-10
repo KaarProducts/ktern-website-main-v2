@@ -1176,7 +1176,7 @@ export default function Events({ h_data, f_data, data }) {
 //   };
 // };
 
-export const getServerSideProps = async (ctx) => {
+export const getStaticPaths = async (ctx) => {
   const event_name = ctx.params.event;
   const webcast = ctx.params.e_category;
   const res = await fetch(
