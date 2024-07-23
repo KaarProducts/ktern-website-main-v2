@@ -103,8 +103,7 @@ export const getStaticPaths = async () => {
     { product: "digital-process" },
     { product: "digital-labs" },
     { product: "digital-mines" },
-    { product: "digital-clean-core" },
-    { product: "digital-hanapedia" },
+    { product: "digital-clean-core" }
   ];
 
   const paths = data.map((index) => {
