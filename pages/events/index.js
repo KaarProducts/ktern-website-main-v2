@@ -348,7 +348,7 @@ export default function Events({ h_data, f_data, data }) {
               <iframe
                 className="hidden lg:block"
                 style={{ height: 'calc(89vh - 100px)', width: 'calc(130vh)' }}
-                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7209879451730415618"
+                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7209879451730415618?compact=1"
                 title="YouTube video player"
                 frameBorder="0"
                 scrolling="no"
@@ -358,7 +358,7 @@ export default function Events({ h_data, f_data, data }) {
               <iframe
                 className="lg:hidden block"
                 style={{ height: 'calc(59vh - 100px)', width: 'calc(60vh)' }}
-                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7209879451730415618"
+                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7209879451730415618?compact=1"
                 title="YouTube video player"
                 frameBorder="0"
                 scrolling="no"
