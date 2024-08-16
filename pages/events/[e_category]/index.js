@@ -23,17 +23,17 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (ctx) => {
   // const name = params.e_category;
 
-  // const res = await fetch(`https://strapi.ktern.com/digital-streams?slug=${streamname}`, {
+  // const res = await fetch(`https://teststrapi1.ktern.com/digital-streams?slug=${streamname}`, {
   //   method: "get",
   // });
 
   // const data = await res.json();
   //  console.log(data[0])
-  //     const res1 = await fetch('https://strapi.ktern.com/header', {
+  //     const res1 = await fetch('https://teststrapi1.ktern.com/header', {
   //       method: 'get',
   //   });
   // const h_data = await res1.json();
-  // const res2 = await fetch('https://strapi.ktern.com/footer', {
+  // const res2 = await fetch('https://teststrapi1.ktern.com/footer', {
   //       method: 'get',
   //   });
   //   const f_data = await res2.json();

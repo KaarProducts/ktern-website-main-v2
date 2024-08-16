@@ -37,7 +37,7 @@ export default function PartnerLandingPage({
 export const getServerSideProps = async (ctx) => {
   const partnerslug = ctx.params.partner;
   const res = await fetch(
-    `https://strapi.ktern.com/partners?slug=${partnerslug}`,
+    `https://teststrapi1.ktern.com/partners?slug=${partnerslug}`,
     {
       method: "get",
     }
@@ -48,11 +48,11 @@ export const getServerSideProps = async (ctx) => {
     ctx.res.statusCode = 302;
     ctx.res.end();
   }
-  const res1 = await fetch("https://strapi.ktern.com/header", {
+  const res1 = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
   });
   const h_data = await res1.json();
-  const res2 = await fetch("https://strapi.ktern.com/footer", {
+  const res2 = await fetch("https://teststrapi1.ktern.com/footer", {
     method: "get",
   });
   const f_data = await res2.json();

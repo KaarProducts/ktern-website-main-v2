@@ -347,15 +347,15 @@ export default function PartnerContact({ data, h_data, f_data }) {
 }
 export const getStaticProps = async () => {
   // data url from strapi
-  const res = await fetch("https://strapi.ktern.com/partner-registration", {
+  const res = await fetch("https://teststrapi1.ktern.com/partner-registration", {
     method: "get",
   });
   const data = await res.json();
-  const res1 = await fetch("https://strapi.ktern.com/header", {
+  const res1 = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
   });
   const h_data = await res1.json();
-  const res2 = await fetch("https://strapi.ktern.com/footer", {
+  const res2 = await fetch("https://teststrapi1.ktern.com/footer", {
     method: "get",
   });
   const f_data = await res2.json();

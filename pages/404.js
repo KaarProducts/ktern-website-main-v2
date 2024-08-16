@@ -59,7 +59,7 @@ export default function Error({ data }) {
 
 export const getStaticProps = async () => {
   // data url from strapi
-  let res = await fetch("https://strapi.ktern.com/not-found", {
+  let res = await fetch("https://teststrapi1.ktern.com/not-found", {
     method: "get",
   });
 

@@ -587,23 +587,23 @@ export default function About({ data, h_data, f_data, n_data }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const res = await fetch(`https://strapi.ktern.com/about-company`, {
+  const res = await fetch(`https://teststrapi1.ktern.com/about-company`, {
     method: "get",
   });
 
   const data = await res.json();
 
   // console.log(data);
-  const res1 = await fetch("https://strapi.ktern.com/header", {
+  const res1 = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
   });
   const h_data = await res1.json();
-  const res2 = await fetch("https://strapi.ktern.com/footer", {
+  const res2 = await fetch("https://teststrapi1.ktern.com/footer", {
     method: "get",
   });
   const f_data = await res2.json();
   const news = await fetch(
-    `https://strapi.ktern.com/news-center-pages?_sort=updatedAt:desc&_limit=4`
+    `https://teststrapi1.ktern.com/news-center-pages?_sort=updatedAt:desc&_limit=4`
   );
   const n_data = await news.json();
   // console.log(n_data)

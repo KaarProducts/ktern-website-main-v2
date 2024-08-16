@@ -358,7 +358,7 @@ export default function Video({ data, h_data, f_data, v_data }) {
 export const getServerSideProps = async (ctx) => {
   // strapi dt to be acquired
   const res = await fetch(
-    `https://strapi.ktern.com/videos?slug=${ctx.params.id}`,
+    `https://teststrapi1.ktern.com/videos?slug=${ctx.params.id}`,
     {
       method: "get",
     }
@@ -369,16 +369,16 @@ export const getServerSideProps = async (ctx) => {
     ctx.res.statusCode = 302;
     ctx.res.end();
   }
-  const res1 = await fetch("https://strapi.ktern.com/header", {
+  const res1 = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
   });
   const h_data = await res1.json();
-  const res2 = await fetch("https://strapi.ktern.com/footer", {
+  const res2 = await fetch("https://teststrapi1.ktern.com/footer", {
     method: "get",
   });
   const f_data = await res2.json();
   const videos = await fetch(
-    `https://strapi.ktern.com/videos?_sort=updatedAt:desc&slug_nin=${ctx.params.id}&_limit=4`
+    `https://teststrapi1.ktern.com/videos?_sort=updatedAt:desc&slug_nin=${ctx.params.id}&_limit=4`
   );
   const v_data = await videos.json();
   // console.log(v_data,v_data.length)

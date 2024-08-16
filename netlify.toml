@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://strapi.ktern.com/"
+  to = "https://teststrapi1.ktern.com/"
   status = 200
   force = true
   conditions = {Role = ["admin", "cms"]}

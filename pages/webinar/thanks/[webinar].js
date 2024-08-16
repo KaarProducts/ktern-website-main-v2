@@ -390,7 +390,7 @@ export const getServerSideProps = async (ctx) => {
   // console.log("in features", params.webinar);
   // data url from strapi)
   const res = await fetch(
-    `https://strapi.ktern.com/webinars?slug=${ctx.params.webinar}`,
+    `https://teststrapi1.ktern.com/webinars?slug=${ctx.params.webinar}`,
     { method: "get" }
   );
   const data = await res.json();
@@ -399,11 +399,11 @@ export const getServerSideProps = async (ctx) => {
     ctx.res.statusCode = 302;
     ctx.res.end();
   }
-  const res1 = await fetch("https://strapi.ktern.com/header", {
+  const res1 = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
   });
   const h_data = await res1.json();
-  const res2 = await fetch("https://strapi.ktern.com/footer", {
+  const res2 = await fetch("https://teststrapi1.ktern.com/footer", {
     method: "get",
   });
   const f_data = await res2.json();

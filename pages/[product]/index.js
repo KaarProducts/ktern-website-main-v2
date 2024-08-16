@@ -122,7 +122,7 @@ export const getStaticProps = async ({ params }) => {
   const stream = params.product;
 
   // Page
-  const page = await fetch(`https://strapi.ktern.com/products?slug=${stream}`, {
+  const page = await fetch(`https://teststrapi1.ktern.com/products?slug=${stream}`, {
     method: "get",
   });
   if (page == undefined) {
@@ -133,13 +133,13 @@ export const getStaticProps = async ({ params }) => {
   const p_data = await page.json();
 
   // Header
-  const header = await fetch("https://strapi.ktern.com/header", {
+  const header = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
   });
   const h_data = await header.json();
 
   // Footer
-  const footer = await fetch("https://strapi.ktern.com/footer", {
+  const footer = await fetch("https://teststrapi1.ktern.com/footer", {
     method: "get",
   });
   const f_data = await footer.json();

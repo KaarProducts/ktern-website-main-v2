@@ -19,7 +19,7 @@ export default function Layout({ children, h_data, f_data }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://strapi.ktern.com/header", {
+  const res = await fetch("https://teststrapi1.ktern.com/header", {
     method: "get",
 
   });
