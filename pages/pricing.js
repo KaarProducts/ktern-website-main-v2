@@ -35,8 +35,8 @@ const responsive = {
     items: 1,
   },
 };
-let selectedOptions = ["maps", "projects", "process", "labs", "mines"];
-let total = 180;
+let selectedOptions = ["maps", "projects", "process", "labs", "mines", "clean-core", "hana"];
+let total = 252;
 function handleClick(selectedOption) {
   if (!selectedOptions.includes(selectedOption)) {
     selectedOptions.push(selectedOption);
@@ -44,12 +44,12 @@ function handleClick(selectedOption) {
     selectedOptions.splice(selectedOptions.indexOf(selectedOption), 1);
   }
   total = selectedOptions.length * 36;
-  if (selectedOptions.length == 5) total = 180;
+  if (selectedOptions.length == 7) total = 252;
   // console.log(selectedOptions)
 }
 function handleTotal() {
-  selectedOptions = ["maps", "projects", "process", "labs", "mines"];
-  total = 180;
+  selectedOptions = ["maps", "projects", "process", "labs", "mines", "clean-core", "hana"];
+  total = 252;
 }
 export default function Pricing({ data, h_data, f_data }) {
   let breadcrumb = [];
@@ -65,6 +65,8 @@ export default function Pricing({ data, h_data, f_data }) {
   const [isProcessSelected, setIsProcessSelected] = useState(true);
   const [isLabsSelected, setIsLabsSelected] = useState(true);
   const [isMinesSelected, setIsMinesSelected] = useState(true);
+  const [isCleanCoreSelected, setIsCleanCoreSelected] = useState(true);
+  const [isHanaSelected, setIsHanaSelected] = useState(true);
   useEffect(() => {
     if (isMapsSelected) {
       if (process.browser)
@@ -100,6 +102,20 @@ export default function Pricing({ data, h_data, f_data }) {
     } else {
       if (process.browser)
         document.getElementById("mines").style.borderColor = "gray";
+    }
+    if (isCleanCoreSelected) {
+      if (process.browser)
+        document.getElementById("clean-core").style.borderColor = "blue";
+    } else {
+      if (process.browser)
+        document.getElementById("clean-core").style.borderColor = "gray";
+    }
+    if (isHanaSelected) {
+      if (process.browser)
+        document.getElementById("hana").style.borderColor = "blue";
+    } else {
+      if (process.browser)
+        document.getElementById("hana").style.borderColor = "gray";
     }
   }, []);
   let faq = [];
@@ -1437,6 +1453,504 @@ export default function Pricing({ data, h_data, f_data }) {
                     </div>
                   </div>
                   {/* /Mines */}
+                  {/* CleanCore */}
+                  <div className="w-full mb-3">
+                    <div
+                      id="clean-core"
+                      className=" relative flex flex-col justify-between h-full p-6 overflow-hidden border rounded-lg"
+                    >
+                      {isCleanCoreSelected && (
+                        <span className="absolute top-0 right-0 px-3 py-0 text-xs tracking-widest text-white bg-blue-600 rounded-bl">
+                          Selected
+                        </span>
+                      )}
+                      <details className="">
+                        <summary className="cursor-pointer">
+                          <div className="flex flex-col w-full">
+                            <div className="flex flex-row justify-between">
+                              <div className=" flex flex-row ">
+                                <span className="flex  w-10 h-8  mb-3 mr-0 bg-transparent rounded-lg">
+                                  <Image
+                                    priority
+                                    src={data.PricingCard[5].StreamLogoURL}
+                                    alt="Digital Clean Core"
+                                    height={40}
+                                    width={30}
+                                  />
+                                </span>
+                                <h2 className="mb-1 pr-2 card-heading">
+                                  {data.PricingCard[5].StreamTitle}
+                                </h2>
+                              </div>
+
+                              {isCleanCoreSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsCleanCoreSelected(false);
+                                      handleClick("clean-core");
+                                      onClick({
+                                        stream_score:
+                                          resolve_stream_score("none"),
+                                        event_name: "Button Click",
+                                        section_name: "Clean Core Section",
+                                        page_source: `${data.PageSEO.PageTitle}`,
+                                        label: `Unselect`,
+                                      });
+                                    }}
+                                  >
+                                    Unselect
+                                  </button>
+                                  <div id="arrow" className="mt-2"></div>
+                                </div>
+                              )}
+                              {!isCleanCoreSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsCleanCoreSelected(true);
+                                      handleClick("clean-core");
+                                      onClick({
+                                        stream_score:
+                                          resolve_stream_score("clean-core"),
+                                        event_name: "Button Click",
+                                        section_name: "Clean Core Section",
+                                        page_source: `${data.PageSEO.PageTitle}`,
+                                        label: `Select`,
+                                      });
+                                    }}
+                                  >
+                                    Select
+                                  </button>
+                                  <div id="arrow" className="mt-2"></div>
+                                </div>
+                              )}
+                            </div>
+                            <h1 className="flex items-center pb-0 card-heading text-gray-900  border-gray-200">
+                              <span>${data.PricingCard[5].Price}K</span>
+                              <span className="ml-1 text-lg font-normal text-gray-500">
+                                /Year
+                              </span>
+                            </h1>
+                            <p className="mt-3 card-subheading  pb-4   text-gray-500">
+                              {data.PricingCard[5].StreamDescription}
+                            </p>
+                          </div>
+                        </summary>
+
+                        <div className="border-t  pt-5 mb-4 ">
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-3 text-lg font-bold  ">Bots</h2>
+                          </div>
+                          {data.PricingCard[5].Bots.map((dt) => (
+                            <div
+                              key="dt"
+                              className="inline-flex items-center mb-2 mr-2 card-subheading bg-secondary  px-3 py-1 bg-white text-black rounded-full"
+                            >
+                              {dt.listItem}
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex  border-b pt-5 mb-6 pb-2">
+                          <div className=" justify-between pt-6 border-t w-1/2">
+                            <h2 className="mb-3 text-lg font-bold  ">
+                              Key Features
+                            </h2>
+                            {data.PricingCard[5].KeyFeatures.map((dt) => (
+                              <Link key="dt" href={dt.PageUrl}>
+                                <a
+                                  onClick={() => {
+                                    onClick({
+                                      stream_score:
+                                        resolve_stream_score("clean-core"),
+                                      event_name: "Link Click",
+                                      section_name:
+                                        "Clean Core - Key Features Section",
+                                      page_source: `${data.PageSEO.PageTitle}`,
+                                      label: `${dt.listItem}`,
+                                    });
+                                  }}
+                                  className="flex items-center mb-2 text-gray-600 card-subheading"
+                                >
+                                  <svg
+                                    className="w-5 h-5 mr-1 text-black"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                      clipRule="evenodd"
+                                    ></path>
+                                  </svg>
+                                  {dt.listItem}
+                                </a>
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="justify-between pt-6 border-t w-1/2">
+                            <h2 className="mb-3 text-lg font-bold  ">Values</h2>
+                            {data.PricingCard[5].Values.map((dt) => (
+                              <p
+                                key="dt"
+                                className="flex items-center mb-2 text-gray-600 card-subheading"
+                              >
+                                <svg
+                                  className="w-5 h-5 mr-1 text-black"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                  ></path>
+                                </svg>
+                                {dt.listItem}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                        {/* <div className="">
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-1 text-lg font-bold ">Users</h2>
+                          </div>
+
+                          {data.PricingCard[5].Users.map((dt) => (
+                            <p
+                              key="dt"
+                              className="flex items-center mb-2 text-gray-600 card-subheading "
+                            >
+                              <span className="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 mr-2 text-white bg-white rounded-full">
+                                <Image
+                                  priority
+                                  src="https://static.thenounproject.com/png/925249-200.png"
+                                  alt=""
+                                  width={150}
+                                  height={150}
+                                />
+                              </span>
+                              {dt.listItem}
+                            </p>
+                          ))}
+                        </div> */}
+                        <div>
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-1 text-lg font-bold ">
+                              Continuous Value
+                            </h2>
+                          </div>
+                          {data.PricingCard[5].ContinuousValue.map((data) => (
+                            <p
+                              key="data"
+                              className="flex items-center mb-2 text-gray-600 card-subheading "
+                            >
+                              {/* <span className="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 mr-2 text-white bg-white rounded-full">
+                                <Image
+                                  priority
+                                  src="https://static.thenounproject.com/png/925249-200.png"
+                                  alt=""
+                                  width={150}
+                                  height={150}
+                                />
+                              </span> */}
+                              {data.listItem}
+                            </p>
+                          ))}
+                        </div>
+                        <div>
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-1 text-lg font-bold ">
+                              Additional Info
+                            </h2>
+                          </div>
+                          {data.PricingCard[5].AdditionalInfo.map((data) => (
+                            <p
+                              key="data"
+                              className="flex items-center mb-2 text-gray-600 card-subheading "
+                            >
+                              <span className="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 mr-2 text-white bg-white rounded-full">
+                                <Image
+                                  priority
+                                  src="https://static.thenounproject.com/png/925249-200.png"
+                                  alt=""
+                                  width={150}
+                                  height={150}
+                                />
+                              </span>
+                              {data.listItem}
+                            </p>
+                          ))}
+                        </div>
+                        <div className="w-full border-t">
+                          {/* <button className="inline-flex items-center justify-center w-full px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"> 
+                                        View All Features
+                                        <div className="w-4 h-4 ml-2 relative"><Image priority layout="fill" src="/pricing/down-arrow-svgrepo-com.svg"  alt="down arrow"/></div>
+                                    </button>
+                                     */}
+                          <p className="mt-3 text-xs text-center text-gray-500">
+                            {data.PricingCard[5].ExtraText}
+                          </p>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                  {/* /CleanCore */}
+                  {/* Hana */}
+                  <div className="w-full mb-3">
+                    <div
+                      id="hana"
+                      className=" relative flex flex-col justify-between h-full p-6 overflow-hidden border rounded-lg"
+                    >
+                      {isHanaSelected && (
+                        <span className="absolute top-0 right-0 px-3 py-0 text-xs tracking-widest text-white bg-blue-600 rounded-bl">
+                          Selected
+                        </span>
+                      )}
+                      <details className="">
+                        <summary className="cursor-pointer">
+                          <div className="flex flex-col w-full">
+                            <div className="flex flex-row justify-between">
+                              <div className=" flex flex-row ">
+                                <span className="flex  w-10 h-8  mb-3 mr-0 bg-transparent rounded-lg">
+                                  <Image
+                                    priority
+                                    src={data.PricingCard[6].StreamLogoURL}
+                                    alt="Digital Hanapedia"
+                                    height={40}
+                                    width={30}
+                                  />
+                                </span>
+                                <h2 className="mb-1 pr-2 card-heading">
+                                  {data.PricingCard[6].StreamTitle}
+                                </h2>
+                              </div>
+
+                              {isHanaSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsHanaSelected(false);
+                                      handleClick("hana");
+                                      onClick({
+                                        stream_score:
+                                          resolve_stream_score("none"),
+                                        event_name: "Button Click",
+                                        section_name: "Hanapedia Section",
+                                        page_source: `${data.PageSEO.PageTitle}`,
+                                        label: `Unselect`,
+                                      });
+                                    }}
+                                  >
+                                    Unselect
+                                  </button>
+                                  <div id="arrow" className="mt-2"></div>
+                                </div>
+                              )}
+                              {!isHanaSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsHanaSelected(true);
+                                      handleClick("hana");
+                                      onClick({
+                                        stream_score:
+                                          resolve_stream_score("hana"),
+                                        event_name: "Button Click",
+                                        section_name: "Hanapedia Section",
+                                        page_source: `${data.PageSEO.PageTitle}`,
+                                        label: `Select`,
+                                      });
+                                    }}
+                                  >
+                                    Select
+                                  </button>
+                                  <div id="arrow" className="mt-2"></div>
+                                </div>
+                              )}
+                            </div>
+                            <h1 className="flex items-center pb-0 card-heading text-gray-900  border-gray-200">
+                              <span>${data.PricingCard[6].Price}K</span>
+                              <span className="ml-1 text-lg font-normal text-gray-500">
+                                /Year
+                              </span>
+                            </h1>
+                            <p className="mt-3 card-subheading  pb-4   text-gray-500">
+                              {data.PricingCard[6].StreamDescription}
+                            </p>
+                          </div>
+                        </summary>
+
+                        <div className="border-t  pt-5 mb-4 ">
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-3 text-lg font-bold  ">Bots</h2>
+                          </div>
+                          {data.PricingCard[6].Bots.map((dt) => (
+                            <div
+                              key="dt"
+                              className="inline-flex items-center mb-2 mr-2 card-subheading bg-secondary  px-3 py-1 bg-white text-black rounded-full"
+                            >
+                              {dt.listItem}
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex  border-b pt-5 mb-6 pb-2">
+                          <div className=" justify-between pt-6 border-t w-1/2">
+                            <h2 className="mb-3 text-lg font-bold  ">
+                              Key Features
+                            </h2>
+                            {data.PricingCard[6].KeyFeatures.map((dt) => (
+                              <Link key="dt" href={dt.PageUrl}>
+                                <a
+                                  onClick={() => {
+                                    onClick({
+                                      stream_score:
+                                        resolve_stream_score("hana"),
+                                      event_name: "Link Click",
+                                      section_name:
+                                        "Hanapedia-Key Features Section",
+                                      page_source: `${data.PageSEO.PageTitle}`,
+                                      label: `${dt.listItem}`,
+                                    });
+                                  }}
+                                  className="flex items-center mb-2 text-gray-600 card-subheading"
+                                >
+                                  <svg
+                                    className="w-5 h-5 mr-1 text-black"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                      clipRule="evenodd"
+                                    ></path>
+                                  </svg>
+                                  {dt.listItem}
+                                </a>
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="justify-between pt-6 border-t w-1/2">
+                            <h2 className="mb-3 text-lg font-bold  ">Values</h2>
+                            {data.PricingCard[6].Values.map((dt) => (
+                              <p
+                                key="dt"
+                                className="flex items-center mb-2 text-gray-600 card-subheading"
+                              >
+                                <svg
+                                  className="w-5 h-5 mr-1 text-black"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                  ></path>
+                                </svg>
+                                {dt.listItem}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                        {/* <div className="">
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-1 text-lg font-bold ">Users</h2>
+                          </div>
+
+                          {data.PricingCard[6].Users.map((dt) => (
+                            <p
+                              key="dt"
+                              className="flex items-center mb-2 text-gray-600 card-subheading "
+                            >
+                              <span className="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 mr-2 text-white bg-white rounded-full">
+                                <Image
+                                  priority
+                                  src="https://static.thenounproject.com/png/925249-200.png"
+                                  alt=""
+                                  width={150}
+                                  height={150}
+                                />
+                              </span>
+                              {dt.listItem}
+                            </p>
+                          ))}
+                        </div> */}
+                        <div>
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-1 text-lg font-bold ">
+                              Continuous Value
+                            </h2>
+                          </div>
+                          {data.PricingCard[6].ContinuousValue.map((data) => (
+                            <p
+                              key="data"
+                              className="flex items-center mb-2 text-gray-600 card-subheading "
+                            >
+                              {/* <span className="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 mr-2 text-white bg-white rounded-full">
+                                <Image
+                                  priority
+                                  src="https://static.thenounproject.com/png/925249-200.png"
+                                  alt=""
+                                  width={150}
+                                  height={150}
+                                />
+                              </span> */}
+                              {data.listItem}
+                            </p>
+                          ))}
+                        </div>
+                        <div>
+                          <div className="flex flex-row justify-between">
+                            <h2 className="mb-1 text-lg font-bold ">
+                              Additional Info
+                            </h2>
+                          </div>
+                          {data.PricingCard[6].AdditionalInfo.map((data) => (
+                            <p
+                              key="data"
+                              className="flex items-center mb-2 text-gray-600 card-subheading "
+                            >
+                              <span className="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 mr-2 text-white bg-white rounded-full">
+                                <Image
+                                  priority
+                                  src="https://static.thenounproject.com/png/925249-200.png"
+                                  alt=""
+                                  width={150}
+                                  height={150}
+                                />
+                              </span>
+                              {data.listItem}
+                            </p>
+                          ))}
+                        </div>
+                        <div className="w-full border-t">
+                          {/* <button className="inline-flex items-center justify-center w-full px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"> 
+                                        View All Features
+                                        <div className="w-4 h-4 ml-2 relative"><Image priority layout="fill" src="/pricing/down-arrow-svgrepo-com.svg"  alt="down arrow"/></div>
+                                    </button>
+                                     */}
+                          <p className="mt-3 text-xs text-center text-gray-500">
+                            {data.PricingCard[6].ExtraText}
+                          </p>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                  {/* /Hana */}
                 </div>
                 <div className="hidden sm:block w-full">
                   <div className="w-full ">
@@ -1462,6 +1976,8 @@ export default function Pricing({ data, h_data, f_data }) {
                               setIsLabsSelected(true);
                               setIsMapsSelected(true);
                               setIsProcessSelected(true);
+                              setIsCleanCoreSelected(true);
+                              setIsHanaSelected(true);
                               handleTotal();
                             }}
                           >
@@ -1710,6 +2226,102 @@ export default function Pricing({ data, h_data, f_data }) {
                             </div>
                           </div>
                         )}
+                        {isCleanCoreSelected && (
+                          <div className="flex py-2 pl-5 pr-0 mb-4 bg-white rounded-lg overflow-hidden flex-row justify-between ">
+                            <div className="flex items-center">
+                              <span className="flex items-center justify-center w-8 h-8 mr-8 bg-transparent rounded-lg">
+                                <Image
+                                  priority
+                                  src={data.PricingCard[5].StreamLogoURL}
+                                  alt="Digital Clean Core"
+                                  height={30}
+                                  width={30}
+                                />
+                              </span>
+                              <h2 className="mb-1 pr-2 card-subheading ">
+                                Digital Clean Core
+                              </h2>
+                            </div>
+                            <div>
+                              {isCleanCoreSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsCleanCoreSelected(false);
+                                      handleClick("clean-core");
+                                    }}
+                                  >
+                                    Unselect
+                                  </button>
+                                </div>
+                              )}
+                              {!isCleanCoreSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsCleanCoreSelected(true);
+                                      handleClick("clean-core");
+                                    }}
+                                  >
+                                    Select
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                        {isHanaSelected && (
+                          <div className="flex py-2 pl-5 pr-0 mb-4 bg-white rounded-lg overflow-hidden flex-row justify-between ">
+                            <div className="flex items-center">
+                              <span className="flex items-center justify-center w-8 h-8 mr-8 bg-transparent rounded-lg">
+                                <Image
+                                  priority
+                                  src={data.PricingCard[6].StreamLogoURL}
+                                  alt="Digital Hanapedia"
+                                  height={30}
+                                  width={30}
+                                />
+                              </span>
+                              <h2 className="mb-1 pr-2 card-subheading ">
+                                Digital Hanapedia
+                              </h2>
+                            </div>
+                            <div>
+                              {isHanaSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsHanaSelected(false);
+                                      handleClick("hana");
+                                    }}
+                                  >
+                                    Unselect
+                                  </button>
+                                </div>
+                              )}
+                              {!isHanaSelected && (
+                                <div className="flex flex-arrow ">
+                                  <button
+                                    id="hey"
+                                    className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                    onClick={() => {
+                                      setIsHanaSelected(true);
+                                      handleClick("hana");
+                                    }}
+                                  >
+                                    Select
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
                       </div>
                       <Markdown
                         options={{
@@ -1796,6 +2408,8 @@ export default function Pricing({ data, h_data, f_data }) {
                             setIsLabsSelected(true);
                             setIsMapsSelected(true);
                             setIsProcessSelected(true);
+                            setIsCleanCoreSelected(true);
+                            setIsHanaSelected(true);
                             handleTotal();
                           }}
                         >
@@ -2033,6 +2647,102 @@ export default function Pricing({ data, h_data, f_data }) {
                                   onClick={() => {
                                     setIsMinesSelected(true);
                                     handleClick("mines");
+                                  }}
+                                >
+                                  Select
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                      {isCleanCoreSelected && (
+                        <div className="flex py-2 pl-5 pr-0 mb-4 bg-white rounded-lg overflow-hidden flex-row justify-between ">
+                          <div className="flex items-center">
+                            <span className="flex items-center justify-center w-8 h-8 mr-8 bg-transparent rounded-lg">
+                              <Image
+                                priority
+                                src={data.PricingCard[5].StreamLogoURL}
+                                alt="Digital Clean Core"
+                                height={30}
+                                width={30}
+                              />
+                            </span>
+                            <h2 className="mb-1 pr-2 card-subheading ">
+                              Digital Clean Core
+                            </h2>
+                          </div>
+                          <div>
+                            {isCleanCoreSelected && (
+                              <div className="flex flex-arrow ">
+                                <button
+                                  id="hey"
+                                  className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                  onClick={() => {
+                                    setIsCleanCoreSelected(false);
+                                    handleClick("clean-core");
+                                  }}
+                                >
+                                  Unselect
+                                </button>
+                              </div>
+                            )}
+                            {!isCleanCoreSelected && (
+                              <div className="flex flex-arrow ">
+                                <button
+                                  id="hey"
+                                  className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                  onClick={() => {
+                                    setIsCleanCoreSelected(true);
+                                    handleClick("clean-core");
+                                  }}
+                                >
+                                  Select
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                      {isHanaSelected && (
+                        <div className="flex py-2 pl-5 pr-0 mb-4 bg-white rounded-lg overflow-hidden flex-row justify-between ">
+                          <div className="flex items-center">
+                            <span className="flex items-center justify-center w-8 h-8 mr-8 bg-transparent rounded-lg">
+                              <Image
+                                priority
+                                src={data.PricingCard[6].StreamLogoURL}
+                                alt="Digital Hanapedia"
+                                height={30}
+                                width={30}
+                              />
+                            </span>
+                            <h2 className="mb-1 pr-2 card-subheading ">
+                              Digital Hanapedia
+                            </h2>
+                          </div>
+                          <div>
+                            {isHanaSelected && (
+                              <div className="flex flex-arrow ">
+                                <button
+                                  id="hey"
+                                  className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                  onClick={() => {
+                                    setIsHanaSelected(false);
+                                    handleClick("hana");
+                                  }}
+                                >
+                                  Unselect
+                                </button>
+                              </div>
+                            )}
+                            {!isHanaSelected && (
+                              <div className="flex flex-arrow ">
+                                <button
+                                  id="hey"
+                                  className="inline-flex items-center justify-center mr-2 px-4 py-1 hyperlink text-gray-600 whitespace-no-wrap bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+                                  onClick={() => {
+                                    setIsHanaSelected(true);
+                                    handleClick("hana");
                                   }}
                                 >
                                   Select
