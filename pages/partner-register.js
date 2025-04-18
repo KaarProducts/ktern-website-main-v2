@@ -13,6 +13,8 @@ import Event, {
   resolve_interest_score,
   resolve_stream_score,
 } from "../component/page_event";
+import { useState, useEffect } from "react";
+
 export default function PartnerContact({ data, h_data, f_data }) {
   const router = useRouter();
   // console.log(router.query.message);
@@ -20,6 +22,45 @@ export default function PartnerContact({ data, h_data, f_data }) {
     if (process.browser)
       document.getElementById("thanks_container").style.display = "block";
   }
+
+  useEffect(() => {
+    const recapElem = document.getElementById("recap240235000001509191");
+
+    if (!recapElem) return;
+
+    const waitForGrecaptcha = setInterval(() => {
+      if (window.grecaptcha && window.grecaptcha.render) {
+        clearInterval(waitForGrecaptcha);
+
+        try {
+          if (!recapElem.querySelector("iframe") && recapElem.innerHTML.trim() === "") {
+            window.grecaptcha.render("recap240235000001509191", {
+              sitekey: "6LeIoBwrAAAAAB8dRUS69CWWiyXIrt-roGQxYTFz",
+              theme: "light",
+              callback: "rccallback240235000001509191",
+            });
+          }
+        } catch (err) {
+          console.warn("reCAPTCHA already rendered or error rendering:", err.message);
+        }
+      }
+    }, 300);
+
+    window.rccallback240235000001509191 = () => {
+      const recapElem = document.getElementById("recap240235000001509191");
+      if (recapElem) recapElem.setAttribute("captcha-verified", "true");
+
+      const error = document.getElementById("recapErr240235000001509191");
+      if (error) error.style.display = "none";
+
+      setCaptchaVerified(true);
+    };
+
+
+    return () => clearInterval(waitForGrecaptcha);
+  }, []);
+
+
   let breadcrumb = [];
   data.PageSEO.BreadCrumb.map((dt) => {
     breadcrumb.push({ position: dt.position, name: dt.name, item: dt.item });
@@ -44,11 +85,17 @@ export default function PartnerContact({ data, h_data, f_data }) {
   return (
     <>
       <Head>
-        <script
+        {/* <script
           async
           id="wf_anal"
           src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=d282bac1d91514c46c75683473f967a121858ebbdbfb6e6b202f66f955b01cfegiddb887390625950606c3528f7d8a1164e437cac61a532b2d3cf089f26bcebb04cgid34012eca3464f95361fd8f71572f880aae345de7c6bd763484fe9bc1e9d54b4fgid4ee3a7e9ace6ab1be7c541b329164307"
+        ></script> */}
+        <script
+          async
+          id="wf_anal"
+          src='https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=3799043305980ed4b8c9e307e8ea8fcab28248fc4a4b6e74248e2c0d9a58278a0f48faff41cb25a2869ddceb30b8157cgid668d00613432817c5336d6c5f8c48f3efc87ff2619f696eff4448d55b6c37b50gidcafde8bf88c11fa6f06ea63996e872b70e17547a4d422dc847d9d8766b969569gideb134fdbce1f712c256623ec477e35d48f698e330121195a85d4fbf4e7eeba56&tw=fde49297bd07c96d65919340b1a34ce7b09d2f1ba2b09db79d64c1da6972dabb'
         ></script>
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
       </Head>
       <LogoJsonLd
         logo={process.env.NEXT_PUBLIC_LOGO}
@@ -284,6 +331,28 @@ export default function PartnerContact({ data, h_data, f_data }) {
                 </div>
               </div>
               <div className="zcwf_row">
+                <div class='zcwf_col_lab'>
+                </div>
+                <div className="zcwf_col_fld">
+                  <div
+                    className="g-recaptcha"
+                    data-sitekey="6LeIoBwrAAAAAB8dRUS69CWWiyXIrt-roGQxYTFz"
+                    data-theme="light"
+                    data-callback="rccallback240235000001509191"
+                    captcha-verified="false"
+                    id="recap240235000001509191"
+                  />
+
+                  <div
+                    id="recapErr240235000001509191"
+                    className="hidden"
+                    style={{ fontSize: "12px", color: "red" }}
+                  >
+                    Captcha validation failed. If you are not a robot then please try again.
+                  </div>
+                </div>
+              </div>
+              <div className="zcwf_row">
                 <div className="zcwf_col_lab"></div>
                 <div className="zcwf_col_fld">
                   <input
@@ -320,7 +389,21 @@ export default function PartnerContact({ data, h_data, f_data }) {
                 <div className="zcwf_col_lab"></div>
                 <div className="zcwf_col_fld">
                   <input
-                    onClick={() => {
+                    onClick={(e) => {
+                      const recap = document.getElementById("recap240235000001509191");
+                      const error = document.getElementById("recapErr240235000001509191");
+
+                      const iframe = recap?.querySelector("iframe");
+                      const isIframeVisible = iframe && iframe.offsetHeight > 0 && iframe.offsetWidth > 0;
+                      const isVerified = recap?.getAttribute("captcha-verified") === "true";
+
+                      if (isIframeVisible && !isVerified) {
+                        if (error) error.style.display = "block";
+                        e.preventDefault();
+                        return;
+                      }
+
+                      if (error) error.style.display = "none";
                       onFormClick({
                         stream_score: resolve_stream_score("none"),
                         event_name: "Form Click",

@@ -12,6 +12,7 @@ import Event, {
   resolve_interest_score,
   resolve_stream_score,
 } from "../component/page_event";
+import { useState, useEffect } from "react";
 
 export default function Contact({ data, h_data, f_data }) {
   const router = useRouter();
@@ -19,6 +20,41 @@ export default function Contact({ data, h_data, f_data }) {
     if (process.browser)
       document.getElementById("thanks_container").style.display = "block";
   }
+
+  useEffect(() => {
+    const recapElem = document.getElementById("recap240235000001509202");
+
+    if (!recapElem) return;
+
+    const waitForGrecaptcha = setInterval(() => {
+      if (window.grecaptcha && window.grecaptcha.render) {
+        clearInterval(waitForGrecaptcha);
+
+        try {
+          if (!recapElem.querySelector("iframe") && recapElem.innerHTML.trim() === "") {
+            window.grecaptcha.render("recap240235000001509202", {
+              sitekey: "6LeIoBwrAAAAAB8dRUS69CWWiyXIrt-roGQxYTFz",
+              theme: "light",
+              callback: "rccallback240235000001509202",
+            });
+          }
+        } catch (err) {
+          console.warn("reCAPTCHA already rendered or error rendering:", err.message);
+        }
+      }
+    }, 300);
+
+    window.rccallback240235000001509202 = () => {
+      const recapElem = document.getElementById("recap240235000001509202");
+      if (recapElem) recapElem.setAttribute("captcha-verified", "true");
+
+      const error = document.getElementById("recapErr240235000001509202");
+      if (error) error.style.display = "none";
+    };
+
+    return () => clearInterval(waitForGrecaptcha);
+  }, []);
+
   let breadcrumb = [];
   data.PageSEO.BreadCrumb.map((dt) => {
     breadcrumb.push({ position: dt.position, name: dt.name, item: dt.item });
@@ -47,8 +83,14 @@ export default function Contact({ data, h_data, f_data }) {
         <script
           async
           id="wf_anal"
-          src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=d282bac1d91514c46c75683473f967a175e22919270e151702cc8d3eb82a033bgiddb887390625950606c3528f7d8a1164e437cac61a532b2d3cf089f26bcebb04cgid34012eca3464f95361fd8f71572f880aae345de7c6bd763484fe9bc1e9d54b4fgid4ee3a7e9ace6ab1be7c541b329164307"
+          src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=3b8cca30a7c0d8c04ff1f6ce7878f810a917e0f974bf4d0500bce8cab1029bfed7af9f39d2e93b049966742b15bfdbbfgid3a1739d6ed825479eedc4e5c188e9e67d41259ed0cc8679300dced882689c601gid7037a0cc649e21fddff26e5a9f4946028742341a6e3e16fa0a0763921c91df5agidc7f3d876cfbe12b33cab01bbf8d9b4a545d2a972db35f6c3a022c3b9c6d48d19&tw=05000233cc45d647eb8cf5f1aaeae7185d053394a1a9b9772cee12e0d2a54791"
         ></script>
+        {/* <script
+          async
+          id="wf_anal"
+          src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=d282bac1d91514c46c75683473f967a175e22919270e151702cc8d3eb82a033bgiddb887390625950606c3528f7d8a1164e437cac61a532b2d3cf089f26bcebb04cgid34012eca3464f95361fd8f71572f880aae345de7c6bd763484fe9bc1e9d54b4fgid4ee3a7e9ace6ab1be7c541b329164307"
+        ></script> */}
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </Head>
       <NextSeo
         title={data.PageSEO.PageTitle}
@@ -386,6 +428,27 @@ export default function Contact({ data, h_data, f_data }) {
                         <div className="zcwf_col_help"></div>
                       </div>
                     </div>
+                    <div className="zcwf_row">
+                      <div class='zcwf_col_lab'>
+                      </div>
+                      <div className="zcwf_col_fld">
+                        <div
+                          className="g-recaptcha"
+                          data-sitekey="6LeIoBwrAAAAAB8dRUS69CWWiyXIrt-roGQxYTFz"
+                          data-theme="light"
+                          data-callback="rccallback240235000001509202"
+                          captcha-verified="false"
+                          id="recap240235000001509202"
+                        />
+                        <div
+                          id="recapErr240235000001509202"
+                          className="hidden"
+                          style={{ fontSize: "12px", color: "red" }}
+                        >
+                          Captcha validation failed. If you are not a robot then please try again.
+                        </div>
+                      </div>
+                    </div>
                     <div className="zcwf_row wfrm_fld_dpNn">
                       <div
                         className="zcwf_col_lab"
@@ -516,7 +579,21 @@ export default function Contact({ data, h_data, f_data }) {
                       <div className="zcwf_col_lab"></div>
                       <div className="zcwf_col_fld">
                         <input
-                          onClick={() => {
+                          onClick={(e) => {
+                            const recap = document.getElementById("recap240235000001509202");
+                            const error = document.getElementById("recapErr240235000001509202");
+
+                            const iframe = recap?.querySelector("iframe");
+                            const isIframeVisible = iframe && iframe.offsetHeight > 0 && iframe.offsetWidth > 0;
+                            const isVerified = recap?.getAttribute("captcha-verified") === "true";
+
+                            if (isIframeVisible && !isVerified) {
+                              if (error) error.style.display = "block";
+                              e.preventDefault();
+                              return;
+                            }
+
+                            if (error) error.style.display = "none";
                             onFormClick({
                               stream_score: resolve_stream_score("none"),
                               event_name: "Form Click",
