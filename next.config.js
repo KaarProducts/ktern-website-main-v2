@@ -31,10 +31,7 @@ module.exports = {
 			],
 		};
 	},
-	target: 'serverless',
-	reactStrictMode: true,
-	throwIfNamespace: false,
-	optimizeImages: false,
+        reactStrictMode: true,
 	i18n: {
 		locales: ['en', 'de'],
 		defaultLocale: 'en',
