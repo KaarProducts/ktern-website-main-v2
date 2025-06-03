@@ -416,7 +416,7 @@ This blueprint will help you define the right plan, the right effort estimate, t
                     <div className="zcwf_row wfrm_fld_dpNn">
                       <div
                         className="zcwf_col_lab"
-                        style={{ fontSize: "12px", fontFamily: 'Figtree' }}
+                        style={{ fontSize: "12px", fontFamily: 'Geist' }}
                       >
                         <label htmlFor="Lead_Source">Lead Source</label>
                       </div>
@@ -469,7 +469,7 @@ This blueprint will help you define the right plan, the right effort estimate, t
                     <div className="zcwf_row wfrm_fld_dpNn">
                       <div
                         className="zcwf_col_lab"
-                        style={{ fontSize: "12px", fontFamily: 'Figtree' }}
+                        style={{ fontSize: "12px", fontFamily: 'Geist' }}
                       >
                         <label htmlFor="CONTACTCF6">Lead Source Form</label>
                       </div>

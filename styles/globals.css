@@ -96,18 +96,18 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-weight: 500;
 }
 
@@ -131,28 +131,28 @@ video {
 /* Fonts */
 
 .header {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
 
 .navbar-h {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 28px;
 }
 
 .navbar-s {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-weight: 400;
   line-height: 20px;
   font-size: 14px;
 }
 
 .hyperlink {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-size: 14px;
   text-decoration: none;
   font-weight: 600;
@@ -160,7 +160,7 @@ video {
 }
 
 .sm-hyperlink {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-size: 10px;
   font-weight: 600;
   line-height: 24px;
@@ -175,7 +175,7 @@ a:hover {
 }
 
 .button {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-weight: 700;
   text-decoration: none;
   font-size: 14px;
@@ -209,7 +209,7 @@ a:hover {
 }
 
 .sm-button {
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   text-decoration: none;
   font-weight: 700;
   font-size: 10px;
@@ -218,7 +218,7 @@ a:hover {
 }
 
 .heading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-weight: 800;
   font-size: 40px;
   line-height: 50px;
@@ -238,21 +238,21 @@ a:hover {
 }
 
 .sm-heading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 50px;
 }
 
 .subheading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 31px;
 }
 
 .sm-subheading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 31px;
@@ -271,56 +271,56 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
 } */
 
 .card-heading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-weight: 700;
   line-height: 34px;
   font-size: 24px;
 }
 
 .sm-card-heading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-weight: 700;
   line-height: 30px;
   font-size: 24px;
 }
 
 .card-subheading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 15px;
   font-weight: 500;
   line-height: 25px;
 }
 
 .sm-card-subheading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 11px;
   font-weight: 500;
   line-height: 25px;
 }
 
 .section-heading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 50px;
 }
 
 .sm-section-heading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 50px;
 }
 
 .section-subheading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 31px;
 }
 
 .sm-section-subheading {
-  font-family: "Geist", "Figtree", "Overpass", sans-serif;
+  font-family: "Overpass", "Geist", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 31px;
@@ -328,7 +328,7 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
 
 .container {
   width: 100%;
-  font-family: "Figtree", "Overpass", sans-serif;
+  font-family: "Geist", "Overpass", sans-serif;
   font-style: normal;
   font-weight: 500;
 }
@@ -688,7 +688,7 @@ body {
 	.zcwf_lblLeft .zcwf_privacy_txt {
 	    color: rgb(0, 0, 0);
 	    font-size: 12px;
-	    font-family: "Figtree", "Overpass", sans-serif;
+	    font-family: "Geist", "Overpass", sans-serif;
 	    display: inline-block;
 	    vertical-align: top;
 	    color: #333;
@@ -1171,7 +1171,7 @@ video {
 
 /* IBM Plex  */
 .ibm-plex {
-  font-family: 'Geist', 'Figtree', 'Overpass', sans-serif;
+  font-family: 'Overpass', 'Geist', sans-serif;
 }
 
 /* DXaaS  */
@@ -1496,7 +1496,7 @@ video {
 
 /* Custom font utility classes */
 .font-heading {
-  font-family: 'Geist', 'Figtree', 'Overpass', sans-serif;
+  font-family: 'Overpass', 'Geist', sans-serif;
 }
 
 .font-numeric {
