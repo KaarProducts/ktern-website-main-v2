@@ -3,9 +3,9 @@ module.exports = {
 	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './component/**/*.{js,ts,jsx,tsx}'],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
-		fontFamily: {
-			body: ['myriad-pro', ' sans-serif'],
-		},
+               fontFamily: {
+                       body: ['Figtree', 'Overpass', 'sans-serif'],
+               },
 		extend: {
 			screens: {
 				sm: {
