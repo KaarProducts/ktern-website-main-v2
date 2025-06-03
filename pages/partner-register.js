@@ -260,7 +260,7 @@ export default function PartnerContact({ data, h_data, f_data }) {
               <div className="zcwf_row">
                 <div
                   className="zcwf_col_lab"
-                  style={{ fontSize: "12px", fontFamily: "Arial" }}
+                  style={{ fontSize: "12px", fontFamily: 'Figtree' }}
                 >
                   <label
                     className="absolute px-2 ml-2 -mt-3 card-subheading font-bold text-black bg-white"
@@ -284,7 +284,7 @@ export default function PartnerContact({ data, h_data, f_data }) {
               <div className="zcwf_row">
                 <div
                   className="zcwf_col_lab"
-                  style={{ fontSize: "12px", fontFamily: "Arial" }}
+                  style={{ fontSize: "12px", fontFamily: 'Figtree' }}
                 >
                   <label
                     className="absolute px-2 ml-2 -mt-3 card-subheading font-bold text-black bg-white"
@@ -308,7 +308,7 @@ export default function PartnerContact({ data, h_data, f_data }) {
               <div className="zcwf_row">
                 <div
                   className="zcwf_col_lab"
-                  style={{ fontSize: "12px", fontFamily: "Arial" }}
+                  style={{ fontSize: "12px", fontFamily: 'Figtree' }}
                 >
                   <label
                     className="absolute px-2 ml-2 -mt-3 card-subheading font-bold text-black bg-white"
