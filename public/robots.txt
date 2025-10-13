@@ -1,3 +1,44 @@
-User-agent: * 
-Disallow: 
+# =============================
+# Ktern.com Robots.txt (AEO Optimized)
+# =============================
 
+# --- Global Rules ---
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /server-sitemap.xml/
+Allow: /
+Allow: /api/public/
+Allow: /api/seo/	
+
+# --- Major Search Crawlers ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# --- AI / Answer Engine Crawlers ---
+User-agent: Google-Extended
+Allow: /                     # Allows your pages to be used in AI Overviews and Bard
+User-agent: GPTBot
+Allow: /                     # Enables ChatGPT browsing mode to access your pages
+User-agent: CCBot
+Allow: /                     # Common Crawl — used for LLM training (ChatGPT, Claude)
+User-agent: ClaudeBot
+Allow: /                     # Anthropic Claude
+User-agent: PerplexityBot
+Allow: /                     # Perplexity.ai search
+User-agent: Applebot
+Allow: /                     # Siri & Apple Spotlight suggestions
+User-agent: FacebookExternalHit
+Allow: /                     # Facebook/Meta preview
+User-agent: Twitterbot
+Allow: /                     # Twitter (X) link previews
+
+# --- Sitemap Declaration ---
+Sitemap: https://ktern.com/sitemap.xml
