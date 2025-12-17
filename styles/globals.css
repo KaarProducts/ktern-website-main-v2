@@ -4,11 +4,12 @@
 @import "react-multi-carousel/lib/styles.css";
 @import "react-tabs/style/react-tabs.css";
 @import "react-dropdown/style.css";
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Overpass:wght@400;500;600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "react-dyn-tabs/style/react-dyn-tabs.css";
 @import "react-dyn-tabs/themes/react-dyn-tabs-card.css";
 @import url("../node_modules/pretty-checkbox/dist/pretty-checkbox.min.css");
 @import url("../node_modules/leaflet/dist/leaflet.css");
+
 img,
 svg,
 video,
@@ -31,7 +32,7 @@ select option:selected {
   scroll-margin-top: 80px;
 }
 
-details > summary {
+details>summary {
   list-style: none;
 }
 
@@ -85,7 +86,7 @@ details[open] #arrow:after {
   margin-bottom: 4px;
 }
 
-.questions:checked ~ .plus {
+.questions:checked~.plus {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -96,19 +97,19 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Geist", "Overpass", sans-serif;
-  font-weight: 500;
+  font-family: "Geist", sans-serif;
+  font-weight: 400;
 }
 
 img,
@@ -131,28 +132,28 @@ video {
 /* Fonts */
 
 .header {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
 
 .navbar-h {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 28px;
 }
 
 .navbar-s {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 400;
   line-height: 20px;
   font-size: 14px;
 }
 
 .hyperlink {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 14px;
   text-decoration: none;
   font-weight: 600;
@@ -160,7 +161,7 @@ video {
 }
 
 .sm-hyperlink {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 10px;
   font-weight: 600;
   line-height: 24px;
@@ -175,7 +176,7 @@ a:hover {
 }
 
 .button {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 700;
   text-decoration: none;
   font-size: 14px;
@@ -209,7 +210,7 @@ a:hover {
 }
 
 .sm-button {
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   text-decoration: none;
   font-weight: 700;
   font-size: 10px;
@@ -218,7 +219,7 @@ a:hover {
 }
 
 .heading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-size: 40px;
   line-height: 50px;
@@ -227,8 +228,7 @@ a:hover {
 .rating-star {
   width: 15px;
   height: 15px;
-  background: url(https://clickup.com/landing/images/icons/rating-star.svg)
-    center/contain no-repeat;
+  background: url(https://clickup.com/landing/images/icons/rating-star.svg) center/contain no-repeat;
   display: inline-block;
 }
 
@@ -238,21 +238,21 @@ a:hover {
 }
 
 .sm-heading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 50px;
 }
 
 .subheading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 31px;
 }
 
 .sm-subheading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 31px;
@@ -271,56 +271,56 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
 } */
 
 .card-heading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 700;
   line-height: 34px;
   font-size: 24px;
 }
 
 .sm-card-heading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 700;
   line-height: 30px;
   font-size: 24px;
 }
 
 .card-subheading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 15px;
   font-weight: 500;
   line-height: 25px;
 }
 
 .sm-card-subheading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 11px;
   font-weight: 500;
   line-height: 25px;
 }
 
 .section-heading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 50px;
 }
 
 .sm-section-heading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 50px;
 }
 
 .section-subheading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 31px;
 }
 
 .sm-section-subheading {
-  font-family: "Overpass", "Geist", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 31px;
@@ -328,9 +328,9 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
 
 .container {
   width: 100%;
-  font-family: "Geist", "Overpass", sans-serif;
+  font-family: "Geist", sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media (min-width: 640px) {
@@ -382,7 +382,7 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
   transform: scale(1.1);
 }
 
-.carousel-open:checked + .carousel-item {
+.carousel-open:checked+.carousel-item {
   position: static;
   opacity: 100;
 }
@@ -392,9 +392,9 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
   transition: opacity 0.6s ease-out;
 }
 
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
+#carousel-1:checked~.control-1,
+#carousel-2:checked~.control-2,
+#carousel-3:checked~.control-3 {
   display: block;
 }
 
@@ -410,21 +410,9 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
   z-index: 10;
 }
 
-#carousel-1:checked
-  ~ .control-1
-  ~ .carousel-indicators
-  li:nth-child(1)
-  .carousel-bullet,
-#carousel-2:checked
-  ~ .control-2
-  ~ .carousel-indicators
-  li:nth-child(2)
-  .carousel-bullet,
-#carousel-3:checked
-  ~ .control-3
-  ~ .carousel-indicators
-  li:nth-child(3)
-  .carousel-bullet {
+#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
   color: #ffb317;
   /*Set to match the Tailwind colour you want the active one to be */
 }
@@ -449,7 +437,7 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
   position: static;
 }
 
-.hoverable > a:after {
+.hoverable>a:after {
   font-size: 10px;
   padding-left: 6px;
   position: relative;
@@ -462,7 +450,7 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
 
 /* #toggle Class Styles */
 
-.toggleable > label:after {
+.toggleable>label:after {
   font-size: 10px;
   padding-left: 6px;
   position: relative;
@@ -474,19 +462,19 @@ nav.p-0.bg-white.w-full.fixed.z-1.shadow-md {
   display: none;
 }
 
-.toggle-input:not(checked) ~ .mega-menu {
+.toggle-input:not(checked)~.mega-menu {
   display: none;
 }
 
-.toggle-input:checked ~ .mega-menu {
+.toggle-input:checked~.mega-menu {
   display: block;
 }
 
-.toggle-input:checked + label {
+.toggle-input:checked+label {
   background: white;
 }
 
-.toggle-input:checked ~ label:after {
+.toggle-input:checked~label:after {
   font-size: 20px;
   padding-bottom: 6px;
   position: relative;
@@ -528,9 +516,7 @@ input[type="search"] {
 }
 
 input[type="search"] {
-  background: white
-    url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat
-    9px center;
+  background: white url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
   border: solid 1px #ccc;
   padding: 9px 10px 9px 32px;
   width: 25%;
@@ -688,7 +674,7 @@ body {
 	.zcwf_lblLeft .zcwf_privacy_txt {
 	    color: rgb(0, 0, 0);
 	    font-size: 12px;
-	    font-family: "Geist", "Overpass", sans-serif;
+	    font-family: "Geist", sans-serif;
 	    display: inline-block;
 	    vertical-align: top;
 	    color: #333;
@@ -757,13 +743,11 @@ body {
 }
 
 .bg-gradient-zospace-2 {
-  background-image: linear-gradient(
-    178.46deg,
-    #1a688200 17.98%,
-    #ff9a3d 38.85%,
-    #ffbe38 40.3%,
-    #4827a5 74.77%
-  );
+  background-image: linear-gradient(178.46deg,
+      #1a688200 17.98%,
+      #ff9a3d 38.85%,
+      #ffbe38 40.3%,
+      #4827a5 74.77%);
 }
 
 .section-maps-copy {
@@ -824,11 +808,9 @@ body {
 }
 
 .plain-projects {
-  background-image: linear-gradient(
-    109.6deg,
-    rgba(156, 252, 248, 1) 11.2%,
-    rgba(110, 123, 251, 1) 91.1%
-  );
+  background-image: linear-gradient(109.6deg,
+      rgba(156, 252, 248, 1) 11.2%,
+      rgba(110, 123, 251, 1) 91.1%);
 }
 
 .projects-card-bg {
@@ -884,21 +866,17 @@ body {
 }
 
 .background-anim {
-  background: linear-gradient(
-    81.86deg,
-    #607a80 1.11%,
-    rgba(8, 15, 25, 0.87) 44.32%,
-    #000000 100%
-  );
+  background: linear-gradient(81.86deg,
+      #607a80 1.11%,
+      rgba(8, 15, 25, 0.87) 44.32%,
+      #000000 100%);
 }
 
 .maps {
-  background: linear-gradient(
-    81.78deg,
-    #f28900 1.11%,
-    rgba(157, 89, 0, 0.92) 26.79%,
-    #000000 105.58%
-  );
+  background: linear-gradient(81.78deg,
+      #f28900 1.11%,
+      rgba(157, 89, 0, 0.92) 26.79%,
+      #000000 105.58%);
 }
 
 .card-maps {
@@ -912,11 +890,9 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
   /* background: linear-gradient(to right, #F37335, #FDC830); */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(255, 145, 83, 1) 0%,
-    rgba(255, 209, 67, 1) 90%
-  );
+  background-image: radial-gradient(circle farthest-corner at 10% 20%,
+      rgba(255, 145, 83, 1) 0%,
+      rgba(255, 209, 67, 1) 90%);
 }
 
 .maps-card {
@@ -934,61 +910,48 @@ body {
 }
 
 .maps-reverse {
-  background: linear-gradient(
-    81.78deg,
-    #000 1.11%,
-    rgba(157, 89, 0, 0.92) 26.79%,
-    #f28900 105.58%
-  );
+  background: linear-gradient(81.78deg,
+      #000 1.11%,
+      rgba(157, 89, 0, 0.92) 26.79%,
+      #f28900 105.58%);
 }
 
 .process {
-  background: linear-gradient(
-    81.25deg,
-    #5449ab 1.1%,
-    rgba(40, 34, 80, 0.94) 37.78%,
-    #000000 137.35%
-  );
+  background: linear-gradient(81.25deg,
+      #5449ab 1.1%,
+      rgba(40, 34, 80, 0.94) 37.78%,
+      #000000 137.35%);
 }
 
 .projects {
-  background: linear-gradient(
-    81.99deg,
-    #2666ba 1.11%,
-    rgba(34, 54, 80, 0.94) 43.39%,
-    #000000 110.21%
-  );
+  background: linear-gradient(81.99deg,
+      #2666ba 1.11%,
+      rgba(34, 54, 80, 0.94) 43.39%,
+      #000000 110.21%);
 }
 
 .mines {
-  background: linear-gradient(
-    81.8deg,
-    #ba2926 1.11%,
-    rgba(80, 35, 34, 0.94) 64.09%,
-    #000000 124.39%
-  );
+  background: linear-gradient(81.8deg,
+      #ba2926 1.11%,
+      rgba(80, 35, 34, 0.94) 64.09%,
+      #000000 124.39%);
 }
 
 .labs {
-  background: linear-gradient(
-    81.85deg,
-    #1c8720 1.11%,
-    rgba(40, 80, 34, 0.94) 44.74%,
-    #000000 122.27%
-  );
+  background: linear-gradient(81.85deg,
+      #1c8720 1.11%,
+      rgba(40, 80, 34, 0.94) 44.74%,
+      #000000 122.27%);
 }
 
 .dxaas {
-  background: linear-gradient(
-    81.86deg,
-    #607a80 1.11%,
-    rgba(8, 15, 25, 0.87) 44.32%,
-    #000000 100%
-  );
+  background: linear-gradient(81.86deg,
+      #607a80 1.11%,
+      rgba(8, 15, 25, 0.87) 44.32%,
+      #000000 100%);
 }
 
-.bg-image {
-}
+.bg-image {}
 
 .dots-wrapper {
   height: 200px;
@@ -1006,31 +969,23 @@ body {
 }
 
 .common-background {
-  background: linear-gradient(
-    81.86deg,
-    #607a80 1.11%,
-    rgba(8, 15, 25, 0.87) 44.32%,
-    #000000 100%
-  );
+  background: linear-gradient(81.86deg,
+      #607a80 1.11%,
+      rgba(8, 15, 25, 0.87) 44.32%,
+      #000000 100%);
 }
 
 .faq-gradient {
   background: hsla(190, 14%, 32%, 1);
-  background: linear-gradient(
-    135deg,
-    hsla(190, 14%, 32%, 1) 10%,
-    hsla(217, 24%, 93%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    135deg,
-    hsla(190, 14%, 32%, 1) 10%,
-    hsla(217, 24%, 93%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    135deg,
-    hsla(190, 14%, 32%, 1) 10%,
-    hsla(217, 24%, 93%, 1) 100%
-  );
+  background: linear-gradient(135deg,
+      hsla(190, 14%, 32%, 1) 10%,
+      hsla(217, 24%, 93%, 1) 100%);
+  background: -moz-linear-gradient(135deg,
+      hsla(190, 14%, 32%, 1) 10%,
+      hsla(217, 24%, 93%, 1) 100%);
+  background: -webkit-linear-gradient(135deg,
+      hsla(190, 14%, 32%, 1) 10%,
+      hsla(217, 24%, 93%, 1) 100%);
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#46595D", endColorstr="#EAEDF2", GradientType=1);
 }
 
@@ -1038,9 +993,7 @@ body {
   width: auto;
   min-width: 100%;
   height: auto;
-  background: transparent
-    url("https://storage.googleapis.com/ktern-public-files/Videos/Sign%20Off.mp4")
-    no-repeat;
+  background: transparent url("https://storage.googleapis.com/ktern-public-files/Videos/Sign%20Off.mp4") no-repeat;
   background-size: cover;
 }
 
@@ -1081,33 +1034,25 @@ video {
 }
 
 .events-bg {
-  background-image: linear-gradient(
-    to top,
-    #d5d4d0 0%,
-    #d5d4d0 1%,
-    #eeeeec 31%,
-    #efeeec 75%,
-    #e9e9e7 100%
-  );
+  background-image: linear-gradient(to top,
+      #d5d4d0 0%,
+      #d5d4d0 1%,
+      #eeeeec 31%,
+      #efeeec 75%,
+      #e9e9e7 100%);
 }
 
 .events-banner {
   background: hsla(355, 74%, 62%, 1);
-  background: linear-gradient(
-    90deg,
-    hsla(355, 74%, 62%, 1) 0%,
-    hsla(0, 0%, 3%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    90deg,
-    hsla(355, 74%, 62%, 1) 0%,
-    hsla(0, 0%, 3%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    hsla(355, 74%, 62%, 1) 0%,
-    hsla(0, 0%, 3%, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      hsla(355, 74%, 62%, 1) 0%,
+      hsla(0, 0%, 3%, 1) 100%);
+  background: -moz-linear-gradient(90deg,
+      hsla(355, 74%, 62%, 1) 0%,
+      hsla(0, 0%, 3%, 1) 100%);
+  background: -webkit-linear-gradient(90deg,
+      hsla(355, 74%, 62%, 1) 0%,
+      hsla(0, 0%, 3%, 1) 100%);
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#E65763", endColorstr="#080808", GradientType=1);
 }
 
@@ -1161,17 +1106,15 @@ video {
 /* Common background */
 
 .background {
-  background: linear-gradient(
-    81.86deg,
-    #607a80 1.11%,
-    rgba(8, 15, 25, 0.87) 44.32%,
-    #000000 100%
-  );
+  background: linear-gradient(81.86deg,
+      #607a80 1.11%,
+      rgba(8, 15, 25, 0.87) 44.32%,
+      #000000 100%);
 }
 
 /* IBM Plex  */
 .ibm-plex {
-  font-family: 'Overpass', 'Geist', sans-serif;
+  font-family: 'Geist', sans-serif;
 }
 
 /* DXaaS  */
@@ -1214,11 +1157,9 @@ video {
 }
 
 .card-maps {
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(255, 145, 83, 1) 0%,
-    rgba(255, 209, 67, 1) 90%
-  );
+  background-image: radial-gradient(circle farthest-corner at 10% 20%,
+      rgba(255, 145, 83, 1) 0%,
+      rgba(255, 209, 67, 1) 90%);
 }
 
 .bg-maps {
@@ -1245,6 +1186,7 @@ video {
   --tw-border-opacity: 1;
   border-color: #f28900;
 }
+
 /* Digital Projects  */
 
 .section-projects {
@@ -1312,11 +1254,9 @@ video {
 }
 
 .card-process {
-  background-image: linear-gradient(
-    111.6deg,
-    rgba(174, 68, 223, 1) 27.3%,
-    rgba(246, 135, 135, 1) 112.7%
-  );
+  background-image: linear-gradient(111.6deg,
+      rgba(174, 68, 223, 1) 27.3%,
+      rgba(246, 135, 135, 1) 112.7%);
 }
 
 .bg-process {
@@ -1340,6 +1280,7 @@ video {
 .text-process {
   color: #5449ab;
 }
+
 /* Digital Labs  */
 
 .section-labs {
@@ -1431,6 +1372,7 @@ video {
 .text-mines {
   color: #ba2926;
 }
+
 /* Tabs  */
 .react-tabs {
   display: flex;
@@ -1496,15 +1438,28 @@ video {
 
 /* Custom font utility classes */
 .font-heading {
-  font-family: 'Overpass', 'Geist', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 .font-numeric {
-  font-family: 'Manrope', 'Figtree', 'Overpass', sans-serif;
+  font-family: 'Sora', sans-serif;
+}
+
+.font-stats {
+  font-family: 'Sora', sans-serif;
 }
 
 .font-code,
 code,
 pre {
   font-family: 'JetBrains Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', sans-serif;
 }

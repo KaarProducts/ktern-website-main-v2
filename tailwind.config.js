@@ -4,7 +4,7 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
                fontFamily: {
-                       body: ['Geist', 'Overpass', 'sans-serif'],
+                       body: ['Geist', 'sans-serif'],
                },
 		extend: {
 			screens: {
