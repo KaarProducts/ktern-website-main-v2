@@ -650,6 +650,88 @@ function Home({ data, h_data, f_data }) {
                 </div>
                 <div className="absolute inset-0 z-10 w-full h-full mt-2 ml-2 bg-mines-secondary border-2 border-gray-800"></div>
               </div>
+              {/*<!-- Digital Clean Core --> */}
+              <div className="relative">
+                <div className="relative z-20 flex flex-col p-5 h-full bg-white border-2 border-gray-800">
+                  <span className="flex  w-8 h-8 mb-3 mr-8 bg-transparent rounded-lg">
+                    <Image
+                      priority
+                      src={data.DigitalStreamsCards[5].StreamLogo.imageURL}
+                      alt={
+                        data.DigitalStreamsCards[5].StreamLogo.imageDescription
+                      }
+                      height={data.DigitalStreamsCards[5].StreamLogo.height}
+                      width={data.DigitalStreamsCards[5].StreamLogo.width}
+                    />
+                  </span>
+                  <h3 className="card-heading font-bold">
+                    {" "}
+                    {data.DigitalStreamsCards[5].StreamTitle}{" "}
+                  </h3>
+                  <p className="mt-4 card-subheading text-gray-700">
+                    {data.DigitalStreamsCards[5].StreamDescription}
+                  </p>
+                  <div className="h-0.5 w-full border-b border-gray-200 my-8">
+                    {" "}
+                  </div>
+                  <ul className="space-y-2 h-full">
+                    {data.DigitalStreamsCards[5].FeaturePoints.map(
+                      (feature) => (
+                        <li
+                          key="feature"
+                          className="flex items-center text-gray-700 card-subheading sm:sm-card-subheading"
+                        >
+                          <span> {feature.listItem} </span>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                  <div className="h-0.5 w-full border-b border-gray-200 my-8">
+                    {" "}
+                  </div>
+                  <p className="mb-5 text-gray-600">
+                    {" "}
+                    {data.DigitalStreamsCards[5].StreamValuePoint}{" "}
+                  </p>
+                  <Link
+                    href={data.DigitalStreamsCards[5].LandingPageURL}
+                    passHref
+                  >
+                    <a
+                      onClick={() => {
+                        onClick({
+                          stream_score: resolve_stream_score("CleanCore"),
+                          event_name: "Link Click",
+                          section_name: "Streams Section",
+                          page_source: `${data.pageSEO.PageTitle}`,
+                          label: "Learn More-Digital Clean Core",
+                        });
+                      }}
+                      className="inline-flex items-center pb-1  text-mines-primary hover:border-blue-500 group "
+                    >
+                      <span className="hyperlink group-hover:text-mines-300">
+                        {" "}
+                        Learn More{" "}
+                      </span>
+                      <svg
+                        className="w-5 h-6 mt-1 ml-2 group-hover:text-mines-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
+                </div>
+                <div className="absolute inset-0 z-10 w-full h-full mt-2 ml-2 bg-mines-secondary border-2 border-gray-800"></div>
+              </div>
             </div>
           </section>
           {/* <!-- /Streams Section --> */} {/* <!-- Why Ktern --> */}
