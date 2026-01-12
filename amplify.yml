@@ -3,21 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 16
-        - nvm use 16
+        - nvm install 18
+        - nvm use 18
         - npm ci --legacy-peer-deps
-        # FORCE CLEAN: Delete old builds to prevent caching issues
-        - rm -rf .next
     build:
       commands:
-        # DEBUG: Print config to PROVE 'target: serverless' is gone
-        - cat next.config.js
         - npm run build
   artifacts:
-    # IMPORTANT: Go back to .next, that is required for SSR
     baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+      - .next/cache/**/*

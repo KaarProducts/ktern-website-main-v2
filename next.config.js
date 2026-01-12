@@ -1,5 +1,12 @@
 module.exports = {
 	swcMinify: true,
+	reactStrictMode: true,
+	throwIfNamespace: false,
+	optimizeImages: false,
+	i18n: {
+		locales: ['en', 'de'],
+		defaultLocale: 'en',
+	},
 	async redirects() {
 		return [
 			{
@@ -31,14 +38,6 @@ module.exports = {
 			],
 		};
 	},
-	// target: 'server',
-	reactStrictMode: true,
-	throwIfNamespace: false,
-	optimizeImages: false,
-	i18n: {
-		locales: ['en', 'de'],
-		defaultLocale: 'en',
-	},
 	images: {
 		domains: [
 			'img.icons8.com',
@@ -59,20 +58,16 @@ module.exports = {
 			'cdn1.iconfinder.com',
 			'unsplash.com',
 			's.clipartkey.com',
-			'ktern.com',
 			'w3.org',
 			'www.w3.org',
 			'stackoverflow.com',
 			'web.ktern.com',
 			'shuffle.dev',
-			'storage.googleapis.com'
 		],
 	},
-
 	headers() {
 		return [
 			{
-				// matching all API routes
 				source: '/api/:path*',
 				headers: [
 					{ key: 'Access-Control-Allow-Credentials', value: 'true' },
@@ -87,4 +82,3 @@ module.exports = {
 		];
 	},
 };
-
