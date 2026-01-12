@@ -9,11 +9,9 @@ frontend:
     build:
       commands:
         - npm run build
-        - ls -la
-        - ls -la .next
-        - echo "Build completed, checking artifacts..."
   artifacts:
-    baseDirectory: .next
+    # CHANGE THIS: Point to the root directory
+    baseDirectory: .
     files:
       - '**/*'
   cache:
