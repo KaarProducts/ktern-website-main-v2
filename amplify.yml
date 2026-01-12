@@ -8,12 +8,12 @@ frontend:
         - npm ci --legacy-peer-deps
     build:
       commands:
-        # REMOVED the export NODE_OPTIONS line because Node 16 doesn't need it
         - npm run build
   artifacts:
-    baseDirectory: .next
+    baseDirectory: .
     files:
-      - "**/*"
+      - '**/*'
+      - '!node_modules/**/*'
   cache:
     paths:
       - node_modules/**/*
