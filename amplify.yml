@@ -6,15 +6,18 @@ frontend:
         - nvm install 16
         - nvm use 16
         - npm ci --legacy-peer-deps
+        # FORCE CLEAN: Delete old builds to prevent caching issues
+        - rm -rf .next
     build:
       commands:
+        # DEBUG: Print config to PROVE 'target: serverless' is gone
+        - cat next.config.js
         - npm run build
   artifacts:
-    # CHANGE THIS: Point to the root directory
-    baseDirectory: .
+    # IMPORTANT: Go back to .next, that is required for SSR
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
-      - .next/cache/**/*
