@@ -31,7 +31,7 @@ module.exports = {
 			],
 		};
 	},
-	target: 'server',
+	// target: 'server',
 	reactStrictMode: true,
 	throwIfNamespace: false,
 	optimizeImages: false,
