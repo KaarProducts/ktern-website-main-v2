@@ -3,16 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install 16
         - nvm use 16
         - npm ci --legacy-peer-deps
     build:
       commands:
-        - export NODE_OPTIONS="--openssl-legacy-provider"
+        # REMOVED the export NODE_OPTIONS line because Node 16 doesn't need it
         - npm run build
   artifacts:
     baseDirectory: .next
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
