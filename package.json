@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "next build",
+    "build-amplify": "cross-env NODE_OPTIONS=--openssl-legacy-provider next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -60,6 +61,7 @@
   },
   "devDependencies": {
     "autoprefixer": "10.3.3",
+    "cross-env": "^10.1.0",
     "postcss": "8.3.6",
     "prettier": "^2.6.2",
     "stylelint-config-recommended": "5.0.0",
