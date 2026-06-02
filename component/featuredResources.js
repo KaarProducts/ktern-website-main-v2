@@ -55,7 +55,7 @@ export default function FeaturedResources({ data, stream }) {
                   <div
                     className="absolute inset-0 p-6 flex flex-col items-start bg-resourcesBg sm:text-center sm:p-2"
                     style={{
-                      backgroundImage: `url(https://storage.googleapis.com/ktern-public-files/website/patterns/circle-${stream}.svg)`,
+                      backgroundImage: `url(https://ktern-public-files.s3.us-east-1.amazonaws.com/website/patterns/circle-${stream}.svg)`,
                       backgroundPosition: 'bottom left',
                       backgroundRepeat: 'no-repeat',
                     }}
@@ -105,7 +105,7 @@ export default function FeaturedResources({ data, stream }) {
                   <div
                     className="absolute inset-0 p-6 flex flex-col items-start bg-resorcesBg sm:text-center sm:p-2"
                     style={{
-                      backgroundImage: `url(https://storage.googleapis.com/ktern-public-files/website/patterns/dots-${stream}.svg)`,
+                      backgroundImage: `url(https://ktern-public-files.s3.us-east-1.amazonaws.com/website/patterns/dots-${stream}.svg)`,
                       backgroundPosition: 'bottom right',
                       backgroundRepeat: 'no-repeat',
                     }}
@@ -159,7 +159,7 @@ export default function FeaturedResources({ data, stream }) {
                   <div
                     className="absolute inset-0 p-6 flex flex-col items-start bg-resourcesBg sm:text-center sm:p-2"
                     style={{
-                      backgroundImage: `url(https://storage.googleapis.com/ktern-public-files/website/patterns/circle-${stream}.svg)`,
+                      backgroundImage: `url(https://ktern-public-files.s3.us-east-1.amazonaws.com/website/patterns/circle-${stream}.svg)`,
                       backgroundPosition: 'bottom left',
                       backgroundRepeat: 'no-repeat',
                     }}
@@ -209,7 +209,7 @@ export default function FeaturedResources({ data, stream }) {
                   <div
                     className="absolute inset-0 p-6 flex flex-col items-start bg-resorcesBg sm:text-center sm:p-2"
                     style={{
-                      backgroundImage: `url(https://storage.googleapis.com/ktern-public-files/website/patterns/dots-${stream}.svg)`,
+                      backgroundImage: `url(https://ktern-public-files.s3.us-east-1.amazonaws.com/website/patterns/dots-${stream}.svg)`,
                       backgroundPosition: 'bottom right',
                       backgroundRepeat: 'no-repeat',
                     }}

@@ -60,7 +60,7 @@ export default function Hero2({ data, stream, breadcrumb }) {
 											<a href="#">
 												<img
 													className="mx-auto"
-													src="https://storage.googleapis.com/ktern-public-files/website/Brand%20Elements/ktern-logo.png"
+													src="https://ktern-public-files.s3.us-east-1.amazonaws.com/website/Brand%20Elements/ktern-logo.png"
 													alt=""
 												/>
 											</a>

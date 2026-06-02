@@ -86,7 +86,7 @@ widgetPublicKey: "fDEEdt2w4fHwLQmNSisdwUnC",
 "name": "KTern.AI",
 "alternateName": "KTern",
 "url": "https://ktern.com",
-"logo": "https://storage.googleapis.com/ktern-public-files/website/Brand%20Elements/ktern-logo.png",
+"logo": "https://ktern-public-files.s3.us-east-1.amazonaws.com/website/Brand%20Elements/ktern-logo.png",
 "contactPoint": [{
 "@type": "ContactPoint",
 "telephone": "+1 (530) 830 9925",

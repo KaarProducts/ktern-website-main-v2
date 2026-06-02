@@ -44,7 +44,7 @@ module.exports = {
 			'img.icons8.com',
 			'cdn-icons-png.flaticon.com',
 			'assets-global.website-files.com',
-			'storage.googleapis.com',
+			'ktern-public-files.s3.us-east-1.amazonaws.com',
 			'logodix.com',
 			'ktern.com',
 			'tracking.g2crowd.com',

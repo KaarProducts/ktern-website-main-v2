@@ -13,7 +13,7 @@ module.exports = {
 				},
 			},
 			backgroundImage: (theme) => ({
-				hero: "url('https://storage.googleapis.com/ktern-public-files/website/Hero/ktern-ai-hero.png')",
+				hero: "url('https://ktern-public-files.s3.us-east-1.amazonaws.com/website/Hero/ktern-ai-hero.png')",
 				herogradient: 'radial-gradient(circle at 75% calc(100% + 20px),#222 0,#727272 90%)',
 				cta: "url('/assets/five-stars.svg')",
 				downarrow: "url('/assets/icons/down-arrow.png')",

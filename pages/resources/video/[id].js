@@ -84,11 +84,11 @@ export default function Video({ data, h_data, f_data, v_data }) {
         additionalLinkTags={[
           {
             rel: "icon",
-            href: "https://storage.googleapis.com/ktern-public-files/website/icons/favicon.ico",
+            href: "https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/favicon.ico",
           },
           {
             rel: "apple-touch-icon",
-            href: "https://storage.googleapis.com/ktern-public-files/website/icons/apple-touch-icon-76x76.png",
+            href: "https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/apple-touch-icon-76x76.png",
             sizes: "76x76",
           },
           {
@@ -180,7 +180,7 @@ export default function Video({ data, h_data, f_data, v_data }) {
                   >
                     <Image
                       priority
-                      src="https://storage.googleapis.com/ktern-public-files/website/Thumbnails/twitter.svg"
+                      src="https://ktern-public-files.s3.us-east-1.amazonaws.com/website/Thumbnails/twitter.svg"
                       width="20"
                       height="30"
                       alt=""
@@ -197,7 +197,7 @@ export default function Video({ data, h_data, f_data, v_data }) {
                   >
                     <Image
                       priority
-                      src="https://storage.googleapis.com/ktern-public-files/website/icons/facebook.svg"
+                      src="https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/facebook.svg"
                       width="20"
                       height="20"
                       alt=""
@@ -214,7 +214,7 @@ export default function Video({ data, h_data, f_data, v_data }) {
                   >
                     <Image
                       priority
-                      src="https://storage.googleapis.com/ktern-public-files/website/icons/linkedIn.svg"
+                      src="https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/linkedIn.svg"
                       width="20"
                       height="30"
                       alt=""

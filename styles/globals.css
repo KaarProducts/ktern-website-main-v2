@@ -993,7 +993,7 @@ body {
   width: auto;
   min-width: 100%;
   height: auto;
-  background: transparent url("https://storage.googleapis.com/ktern-public-files/Videos/Sign%20Off.mp4") no-repeat;
+  background: transparent url("https://ktern-public-files.s3.us-east-1.amazonaws.com/Videos/Sign%20Off.mp4") no-repeat;
   background-size: cover;
 }
 

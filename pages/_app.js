@@ -39,7 +39,7 @@ function MyApp ({ Component, pageProps }) {
     <>
       <Head>
       
-        <link rel="shortcut icon"  href="https://storage.googleapis.com/ktern-public-files/website/icons/favicon.ico" />
+        <link rel="shortcut icon"  href="https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0b1320" />
         {/* <!-- this sets logo in Apple smatphones. --> */}

@@ -101,11 +101,11 @@ export default function technical_partner({ data, h_data, f_data }) {
         additionalLinkTags={[
           {
             rel: "icon",
-            href: "https://storage.googleapis.com/ktern-public-files/website/icons/favicon.ico",
+            href: "https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/favicon.ico",
           },
           {
             rel: "apple-touch-icon",
-            href: "https://storage.googleapis.com/ktern-public-files/website/icons/apple-touch-icon-76x76.png",
+            href: "https://ktern-public-files.s3.us-east-1.amazonaws.com/website/icons/apple-touch-icon-76x76.png",
             sizes: "76x76",
           },
           {
