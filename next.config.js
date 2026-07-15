@@ -31,7 +31,6 @@ module.exports = {
 			],
 		};
 	},
-	target: 'serverless',
 	reactStrictMode: true,
 	throwIfNamespace: false,
 	optimizeImages: false,
